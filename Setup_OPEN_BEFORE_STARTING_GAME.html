@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+<html>
+    <title>Idle Paper Kingdom MMO v.0.0.1</title>
+    <head>
+    <style>
+body  {
+    background-image: url("paper.jpg");
+}
+</style>
+    </head>
+    <body>  
+        
+<script>
+    function setGame() {
+document.getElementById("result").innerHTML = "Game has been set/reset to default settings.";
+localStorage.cardboard = 0
+localStorage.paper = 0
+localStorage.papermulti = 1
+localStorage.box = 0
+localStorage.gold = 0
+localStorage.paperwall = 0
+localStorage.ruby = 0
+localStorage.papermoney = 0
+    }
+    
+</script>
+
+
+        
+<h2 style="font-family:verdana;">Idle Paper Kingdom MMO v.0.0.1</h2><a href=IdleLauncher.html><button>Login</button></a>
+
+        <p id="result"></p>        
+
+        
+        <button onclick="setGame()" type="button">Set/Reset Game.</button><br>
+  <br><br><br><br><br><br>
+            <p>Idle Paper Kingdom MMO 2016. Made by pyroxgame.</p>
+    </body>
+</html>

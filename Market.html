@@ -1,0 +1,57 @@
+<! DOCTYPE html>
+<html>
+    <title>Idle Paper Kingdom MMO v.0.0.1</title>
+    <head>
+    <style>
+body  {
+    background-image: url("paper.jpg");
+}
+</style>
+    </head>
+    <body>  
+<script>
+
+    function giveTrader() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.paperwall > 0) {
+            localStorage.papermoney = Number(localStorage.papermoney)+1;
+            localStorage.paperwall = Number(localStorage.paperwall)-1;
+        document.getElementById("result").innerHTML = "You give the trader a paper wall. You have " + localStorage.paperwall + " walls left and now have  " + localStorage.papermoney + " paper money.";
+        } else {
+            localStorage.paperwall = Number(localStorage.paperwall);
+document.getElementById("result").innerHTML = "You can't afford that.";
+        }
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+    function buyUpgrade() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.papermoney > 2 * Number(localStorage.papermulti) + 2 * 3 ) {
+            localStorage.papermoney = Number(localStorage.papermoney) - 2 * Number(localStorage.papermulti) - 2 * 4;
+            localStorage.papermulti = Number(localStorage.papermulti)+1;
+            document.getElementById("result").innerHTML = "You purchase some better paper-making equipment and promptly and install it. It makes you more productive. (+1 paper making) You have " + localStorage.papermoney + " paper money left.";
+        } else {
+            localStorage.papermoney = Number(localStorage.papermoney);
+document.getElementById("result").innerHTML = "You can't afford that.";
+        }
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+</script>
+        
+<h2 style="font-family:verdana;">Idle Paper Kingdom MMO v.0.0.1</h2><a href="Idle.html"><button>Home</button></a><a href="Crafting.html"><button>Crafting</button></a><a href="Resources.html"><button>Your Resources</button></a><a href="Market.html"><button>Market</button></a><button>Coming Soon</button><a href=IdleLauncher.html><button>Logout</button></a><br><br>
+        <p>You step into the noisy market. They are people everywhere and lots of stores selling and trading papery things.</p><br>
+        <img src="trader.jpg" height="150" weight="75"><br>
+        <p><b>Trader: </b>Welcome, customer. I'm currently buying paper walls to build my castle. I will pay you <b>paper money</b>, which is a currency in some stores. I'm also selling a few things.</p><br>
+                <div id="result"></div>
+        <button onclick="giveTrader()">Give him 1 paper wall.</button><br>
+        <p style="color:tomato; font-family:verdana;"><b>The Trader:</b></p>
+        <button onclick="buyUpgrade()">Buy some better paper-making equipment. (Each upgrade costs more than the previous. It starts at 10 then 12, 14, 16 and so on.)</button>
+  <br><br><br><br><br><br>
+            <p>Idle Paper Kingdom MMO 2016. Made by pyroxgame.</p>
+    </body>
+</html>

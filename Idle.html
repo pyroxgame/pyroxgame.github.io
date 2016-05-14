@@ -1,0 +1,67 @@
+<! DOCTYPE html>
+<html>
+    <title>Idle Paper Kingdom MMO v.0.0.1</title>
+    <head>
+    <style>
+body  {
+    background-image: url("paper.jpg");
+}
+</style>
+    </head>
+    <body>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    
+    <script>
+         $(document).ready(function(){
+    $("strong").click(function(){
+        $("strong").hide(3000);
+    });
+});
+</script>
+<script>
+function clickPaper() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.paper) {
+            localStorage.paper = Number(localStorage.paper)+Number(localStorage.papermulti);
+        
+        } else {
+            localStorage.paper = 1;
+        }
+        document.getElementById("result").innerHTML = "You have " + localStorage.paper + " paper.";
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+
+</script>
+
+<script>
+            function clickGold() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.gold) {
+            localStorage.gold = Number(localStorage.gold)+1;
+        } else {
+            localStorage.gold = 1;
+        }
+        document.getElementById("result1").innerHTML = "You have " + localStorage.gold + " gold.";
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+</script>
+        
+<h2 style="font-family:verdana;">Idle Paper Kingdom MMO v.0.0.1</h2><a href="Idle.html"><button>Home</button></a><a href="Crafting.html"><button>Crafting</button></a><a href="Resources.html"><button>Your Resources</button></a><a href="Market.html"><button>Market</button></a><button>Coming Soon</button><a href=IdleLauncher.html><button>Logout</button></a>
+        <strong onclick="clickGold(); this.innerHTML = 'Come again tommorrow for another reward.'" style=" font-family:verdana;">Daily Reward</strong>
+
+        <p id="result"></p>
+        <p id="result1"></p>
+        
+
+        
+        <button onclick="clickPaper()" type="button">Make some paper.</button><br>
+  <br><br><br><br><br><br>
+            <p>Idle Paper Kingdom MMO 2016. Made by pyroxgame.</p>
+    </body>
+</html>

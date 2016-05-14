@@ -1,0 +1,71 @@
+<! DOCTYPE html>
+<html>
+    <title>Idle Paper Kingdom MMO v.0.0.1</title>
+    <head>
+    <style>
+body  {
+    background-image: url("paper.jpg");
+}
+</style>
+    </head>
+    <body>  
+        
+<script>
+    function clickCardboard() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.paper > 4) {
+            localStorage.cardboard = Number(localStorage.cardboard)+1;
+            localStorage.paper = Number(localStorage.paper)-5;
+        } else {
+            localStorage.cardboard = Number(localStorage.cardboard);
+        }
+        document.getElementById("result").innerHTML = "You have " + localStorage.cardboard + " cardboard and " + localStorage.paper + " paper.";
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+    function clickBox() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.cardboard > 4) {
+            localStorage.box = Number(localStorage.box)+1;
+            localStorage.cardboard = Number(localStorage.cardboard)-5;
+        } else {
+            localStorage.box = Number(localStorage.box);
+        }
+        document.getElementById("result").innerHTML = "You have " + localStorage.box + " box(es) and " + localStorage.cardboard + " cardboard.";
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+    function clickPaperwall() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.box > 4) {
+            localStorage.paperwall = Number(localStorage.paperwall)+1;
+            localStorage.box = Number(localStorage.box)-5;
+        } else {
+            localStorage.paperwall = Number(localStorage.paperwall);
+        }
+        document.getElementById("result").innerHTML = "You have " + localStorage.paperwall + " paper wall(s) and " + localStorage.box + " box(es).";
+    }
+    else {
+        document.getElementById("result").innerHTML = "E404, Your browser does not support web storage.";
+    }
+}
+</script>
+
+
+        
+<h2 style="font-family:verdana;">Idle Paper Kingdom MMO v.0.0.1</h2><a href="Idle.html"><button>Home</button></a><a href="Crafting.html"><button>Crafting</button></a><a href="Resources.html"><button>Your Resources</button></a><a href="Market.html"><button>Market</button></a><button>Coming Soon</button><a href=IdleLauncher.html><button>Logout</button></a>
+
+        <p id="result"></p>        
+
+        
+        <button onclick="clickCardboard()" type="button">Craft a sheet of cardboard. (5 paper)</button><br><br>
+        <button onclick="clickBox()" type="button">Put together a box. (5 cardboard)</button><br><br>
+        <button onclick="clickPaperwall()" type="button">Construct a paper wall. (5 boxes)</button><br><br>
+  <br><br><br><br><br><br>
+            <p>Idle Paper Kingdom MMO 2016. Made by pyroxgame.</p>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<! DOCTYPE html>
+<html>
+    <title>Idle Paper Kingdom MMO v.0.0.1</title>
+    <head>
+    <style>
+body  {
+    background-image: url("paper.jpg");
+}
+</style>
+    </head>
+    <body>  
+<script>
+
+    function showResources(){
+        document.getElementById("result").innerHTML = "You have " + localStorage.gold + " gold, " + localStorage.paper + " paper, " + localStorage.cardboard + " cardboard, " + localStorage.box + " box(es), " + localStorage.papermoney + " paper money, " +localStorage.ruby + " rubies and " + localStorage.paperwall + " paper walls.";
+    }
+</script>
+        
+<h2 style="font-family:verdana;">Idle Paper Kingdom MMO v.0.0.1</h2><a href="Idle.html"><button>Home</button></a><a href="Crafting.html"><button>Crafting</button></a><a href="Resources.html"><button>Your Resources</button></a><a href="Market.html"><button>Market</button></a><button>Coming Soon</button><a href=IdleLauncher.html><button>Logout</button></a><br><br>
+
+        <button onclick="showResources()">Show Resources.</button>  
+        <div id="result"></div>
+
+  <br><br><br><br><br><br>
+            <p>Idle Paper Kingdom MMO 2016. Made by pyroxgame.</p>
+    </body>
+</html>
